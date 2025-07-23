@@ -1,0 +1,111 @@
+DocuAI Project Overview
+=======================
+
+🌟 Project Overview
+-------------------
+DocuAI is a modern, user-friendly AI-powered document processing web application. It allows users to upload documents (images or PDFs), process them using AI (for OCR, summarization, etc.), and manage their processed documents with a beautiful, responsive UI that supports dark mode and customization.
+
+🏗️ Main Features & Structure
+----------------------------
+1. Home Page
+   - Welcomes users with a modern, gradient background and bold branding.
+   - Highlights the main features: Document Processing, Fast & Accurate Results, and History Tracking.
+   - "Start Processing" button leads to the document processing page.
+
+2. Document Processing Page
+   - Users can upload images or PDFs.
+   - The app sends the file to a backend server for processing (OCR, summarization, etc.).
+   - After processing, the extracted text is shown in a stylish card.
+   - Users can export the result as PDF or TXT.
+   - All actions are visually appealing and responsive.
+
+3. History Page
+   - Users can view a list of all previously processed documents.
+   - Each entry shows details and allows for actions like download or delete.
+   - Clean, card-based layout for easy browsing.
+
+4. Settings Page
+   - Users can personalize their experience:
+     - Toggle dark mode (applies to the whole app).
+     - Set a personal motto (shown in the theme preview).
+     - Pick an accent color for UI highlights.
+     - Choose font size, language, and notification preferences.
+     - Reset all settings to default.
+   - Live theme preview updates as users change settings.
+
+5. Navigation
+   - A modern navbar at the top for easy access to all main pages.
+   - Responsive design for desktop and mobile.
+
+⚙️ How the Project Works (Technical Flow)
+----------------------------------------
+1. Frontend (React + Tailwind CSS)
+   - All UI is built with React components and styled using Tailwind CSS for a modern look.
+   - State is managed with React hooks and context (for theme/dark mode).
+   - User settings are saved in localStorage for persistence.
+   - File uploads and downloads are handled in-browser.
+
+2. Backend (Python, likely FastAPI or Flask)
+   - Receives uploaded files via an API endpoint.
+   - Processes files using OCR, AI summarization, etc.
+   - Returns the processed text and summary to the frontend.
+   - Stores processed documents for history tracking.
+
+3. Dark Mode & Customization
+   - The entire app supports dark mode, toggled from the settings page.
+   - Accent color and font size are customizable and reflected throughout the UI.
+
+🚀 How to Run the Project
+------------------------
+1. Prerequisites
+   - Node.js (for frontend)
+   - Python 3.8+ (for backend)
+   - Tesseract OCR (for image processing)
+   - Ollama (for AI model, if used)
+   - (All dependencies are managed via requirements.txt and package.json)
+
+2. Quick Start (Recommended)
+   - You have a run.bat script that automates setup and startup:
+     - On Windows: Double-click run.bat or run it from the command line:
+       run.bat
+     - This will:
+       - Check/install Python and Tesseract.
+       - Start the backend server.
+       - Install Python dependencies.
+       - Run backend tests.
+       - Tell you when the backend is running.
+   - Start the frontend:
+     - Open a new terminal in your project directory.
+     - Run:
+       npm install
+       npm start
+     - This will start the React frontend at http://localhost:3000
+   - Use the app:
+     - Open your browser and go to http://localhost:3000
+     - Upload documents, process them, and enjoy the features!
+
+3. Manual Steps (if needed)
+   - Backend:
+     - Go to the backend folder.
+     - Install dependencies: pip install -r requirements.txt
+     - Run: python main.py
+   - Frontend:
+     - In the root folder, run: npm install then npm start
+
+📝 Customization & Extensibility
+-------------------------------
+- You can add more document processing features (e.g., translation, advanced analytics).
+- The UI is easy to extend with new pages or settings.
+- The backend can be swapped for more powerful AI models as needed.
+
+🛠️ Tech Stack
+-------------
+- Frontend: React, Tailwind CSS, React Router, Lucide Icons, React Hot Toast
+- Backend: Python (FastAPI/Flask), Tesseract OCR, AI models (Ollama, etc.)
+- Other: LocalStorage for settings, file-saver for downloads
+
+💡 Summary
+----------
+- DocuAI is a full-stack, modern, customizable document processing app.
+- It's easy to run, visually appealing, and ready for both personal and professional use.
+- All major features are accessible from the navbar, and the app is responsive and theme-aware. 

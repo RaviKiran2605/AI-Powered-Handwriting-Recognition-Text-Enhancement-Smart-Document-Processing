@@ -1,0 +1,13 @@
+fastapi==0.68.1
+uvicorn==0.15.0
+python-multipart==0.0.5
+torch==1.9.0
+transformers==4.11.3
+Pillow==8.3.2
+numpy==1.21.2
+cryptography==35.0.0
+python-docx==0.8.11
+reportlab==3.6.8
+python-pptx==0.6.21
+TextBlob==0.17.1
+nltk==3.8.1 

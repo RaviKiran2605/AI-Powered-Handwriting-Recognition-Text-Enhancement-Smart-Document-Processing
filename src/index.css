@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  a {
+    @apply text-blue-600 dark:text-blue-400 hover:underline;
+  }
+
+  /* Improve text contrast in dark mode */
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* Ensure text is visible in both modes */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gray-900 dark:text-white;
+  }
+
+  p, span, div {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors 
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 
+           focus-visible:ring-blue-500;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-900 hover:bg-gray-200 
+           focus-visible:ring-gray-500 dark:bg-gray-800 dark:text-gray-100 
+           dark:hover:bg-gray-700;
+  }
+
+  /* Improve input field visibility */
+  input, textarea, select {
+    @apply bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-gray-300 dark:border-gray-600;
+  }
+
+  /* Improve placeholder visibility */
+  ::placeholder {
+    @apply text-gray-500 dark:text-gray-400;
+  }
+}
+
+:root {
+  --toaster-bg: #ffffff;
+  --toaster-color: #1f2937;
+}
+
+[data-theme='dark'] {
+  --toaster-bg: #1f2937;
+  --toaster-color: #ffffff;
+}
+
+/* Ensure text visibility in dark mode */
+.dark {
+  color-scheme: dark;
+}
+
+.dark .text-gray-600 {
+  color: #9CA3AF;
+}
+
+.dark .text-gray-700 {
+  color: #D1D5DB;
+}
+
+.dark .text-gray-800 {
+  color: #E5E7EB;
+}
+
+.dark .text-gray-900 {
+  color: #F3F4F6;
+}
+
+/* Fix button and interactive element contrast */
+.dark button:not([disabled]),
+.dark a:not([disabled]) {
+  color: #F3F4F6;
+}
+
+/* Ensure form elements are visible */
+.dark input,
+.dark select,
+.dark textarea {
+  color: #F3F4F6;
+  background-color: #374151;
+  border-color: #4B5563;
+}
+
+/* Fix icon visibility */
+.dark svg {
+  color: currentColor;
+}
+
+/* Ensure proper contrast for cards and containers */
+.dark .bg-white {
+  background-color: #1F2937;
+}
+
+.dark .border-gray-100,
+.dark .border-gray-200 {
+  border-color: #374151;
+}
+
+/* Fix hover states */
+.dark .hover\:bg-gray-100:hover {
+  background-color: #374151;
+}
+
+.dark .hover\:text-gray-900:hover {
+  color: #F3F4F6;
+}
+
+/* Icon-specific styles */
+.icon-container {
+  @apply flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900;
+}
+
+.icon-container svg {
+  @apply w-6 h-6 text-blue-600 dark:text-blue-300;
+}
+
+/* Feature icons */
+.feature-icon {
+  @apply w-12 h-12 p-2 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300;
+}
+
+/* Navigation icons */
+.nav-icon {
+  @apply w-5 h-5 text-gray-600 dark:text-gray-300;
+}
+
+/* Action icons */
+.action-icon {
+  @apply w-5 h-5 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors;
+}
+
+/* Status icons */
+.status-icon {
+  @apply w-4 h-4;
+}
+
+.status-icon.success {
+  @apply text-green-500 dark:text-green-400;
+}
+
+.status-icon.error {
+  @apply text-red-500 dark:text-red-400;
+}
+
+.status-icon.warning {
+  @apply text-yellow-500 dark:text-yellow-400;
+}
+
+.status-icon.info {
+  @apply text-blue-500 dark:text-blue-400;
+}
+
+/* Button icons */
+.btn-icon {
+  @apply w-4 h-4 mr-2;
+}
+
+/* Ensure proper contrast for all icons */
+.dark .icon-primary {
+  @apply text-blue-300;
+}
+
+.dark .icon-secondary {
+  @apply text-gray-300;
+}
+
+.dark .icon-accent {
+  @apply text-indigo-300;
+}
+
+/* Ensure proper contrast for cards and containers */
+.dark .bg-white {
+  background-color: #1F2937;
+}
+
+.dark .border-gray-100,
+.dark .border-gray-200 {
+  border-color: #374151;
+}
+
+/* Fix hover states */
+.dark .hover\:bg-gray-100:hover {
+  background-color: #374151;
+}
+
+.dark .hover\:text-gray-900:hover {
+  color: #F3F4F6;
+}
